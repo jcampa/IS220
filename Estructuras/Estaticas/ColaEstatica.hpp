@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../defs.h"
+#include "../Interfaces/ICola.hpp"
 #include "../Base/RegionEstatica.hpp"
 
 #include <utility>
@@ -8,7 +9,7 @@
 namespace IS220 { namespace Estructuras { namespace Estaticas {
 
 	template <typename TDato, std::size_t UCapacidad>
-	class ColaEstaticaBase {
+	class ColaEstaticaBase : public Interfaces::ICola<TDato> {
 	public:
 		typedef TDato tipo_valor;
 		typedef TDato& referencia;
