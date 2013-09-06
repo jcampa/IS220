@@ -26,7 +26,7 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 			return m_cantidad == UCapacidad;
 		}
 		
-		bool Poner(const tipo_valor& obj) {
+		bool Poner(const_referencia obj) {
 			if (Llena()) {
 				return false;
 			}
@@ -40,7 +40,7 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 			return true;
 		}
 		
-		bool Sacar(tipo_valor& obj) {
+		bool Sacar(referencia obj) {
 			if (Vacia()) {
 				return false;
 			}
