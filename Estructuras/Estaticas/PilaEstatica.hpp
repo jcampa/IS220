@@ -16,10 +16,10 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 		
 	public:
 		PilaEstaticaBase()
-			: m_cantidad(0u) { }
+			: m_cantidad(0) { }
 		
 		inline bool Vacia() const {
-			return m_cantidad == 0u;
+			return m_cantidad == 0;
 		}
 		
 		inline bool Llena() const {
@@ -63,7 +63,7 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 	};
 	
 	template <typename TDato>
-	class PilaEstatica : public PilaEstaticaBase<TDato, 20u> {
+	class PilaEstatica : public PilaEstaticaBase<TDato, 20> {
 		//using PilaEstaticaBase::PilaEstaticaBase;
 	};
 	

@@ -23,11 +23,11 @@ namespace IS220 { namespace Estructuras { namespace Base {
 		}
 		
 		inline operator puntero() {
-			return & operator[](0u);
+			return & operator[](0);
 		}
 		
 		inline CONSTEXPR operator const_puntero() const {
-			return & operator[](0u);
+			return & operator[](0);
 		}
 		
 	private:

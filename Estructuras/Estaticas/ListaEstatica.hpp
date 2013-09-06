@@ -25,9 +25,9 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 		static const iterador sin_pos = -1;
 
 		ListaEstaticaBase()
-			: m_it_lista(sin_pos), m_it_libre(0u)
+			: m_it_lista(sin_pos), m_it_libre(0)
 		{
-			for (size_t i = 0u; i < UCapacidad - 1; ++i) {
+			for (size_t i = 0; i < UCapacidad - 1; ++i) {
 				m_datos[i].m_siguiente = i + 1;
 			}
 
@@ -135,7 +135,7 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 	};
 
 	template <typename TDato>
-	class ListaEstatica : public ListaEstaticaBase<TDato, 20u> {
+	class ListaEstatica : public ListaEstaticaBase<TDato, 20> {
 		//using ListaEstaticaBase::ListaEstaticaBase;
 	};
 

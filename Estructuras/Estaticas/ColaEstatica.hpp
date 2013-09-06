@@ -19,10 +19,10 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 
 	public:
 		ColaEstaticaBase()
-			: m_inicio(0u), m_cantidad(0u) { }
+			: m_inicio(0), m_cantidad(0) { }
 
 		inline bool Vacia() const {
-			return m_cantidad == 0u;
+			return m_cantidad == 0;
 		}
 
 		inline bool Llena() const {
@@ -70,13 +70,13 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 				return false;
 			}
 
-			for (size_t i = 0u; i < m_cantidad; ++i) {
+			for (size_t i = 0; i < m_cantidad; ++i) {
 				new(&m_datos[i]) tipo_valor(MOVE(m_datos[i + m_inicio]));
 
 				m_datos[i + m_inicio].~tipo_valor();
 			}
 
-			m_inicio = 0u;
+			m_inicio = 0;
 
 			return false;
 		}
@@ -89,7 +89,7 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 	};
 
 	template <typename TDato>
-	class ColaEstatica : public ColaEstaticaBase<TDato, 20u> {
+	class ColaEstatica : public ColaEstaticaBase<TDato, 20> {
 		//using ColaEstaticaBase::ColaEstaticaBase;
 	};
 
