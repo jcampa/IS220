@@ -42,21 +42,21 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 			return m_it_libre == sin_pos;
 		}
 		
-		iterador Inicio() const {
+		inline iterador Inicio() const {
 			return m_it_lista;
 		}
 		
-		iterador Fin() const {
+		inline iterador Fin() const {
 			return sin_pos;
 		}
 		
 		// Comportamiento indefinido para it == sin_pos
-		referencia Acceder(iterador it) {
+		inline referencia Acceder(iterador it) {
 			return AccederNodo(it)->m_dato;
 		}
 		
 		// Comportamiento indefinido para it == sin_pos
-		iterador Siguiente(iterador it) {
+		inline iterador Siguiente(iterador it) {
 			return AccederNodo(it)->m_siguiente;
 		}
 		
