@@ -50,10 +50,12 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 			return sin_pos;
 		}
 		
+		// Comportamiento indefinido para it == sin_pos
 		referencia Acceder(iterador it) {
 			return AccederNodo(it)->m_dato;
 		}
 		
+		// Comportamiento indefinido para it == sin_pos
 		iterador Siguiente(iterador it) {
 			return AccederNodo(it)->m_siguiente;
 		}
