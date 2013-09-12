@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../../defs.h"
 #include "../Base/RegionEstatica.hpp"
 
 #include <algorithm>
