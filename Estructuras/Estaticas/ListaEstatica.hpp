@@ -61,7 +61,7 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 			return AccederNodo(it)->m_siguiente;
 		}
 		
-		bool Insertar(const_referencia obj, iterador it) {
+		bool Insertar(const_referencia obj, iterador it = sin_pos) {
 			if (Llena()) {
 				return false;
 			}
@@ -83,7 +83,7 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 			return true;
 		}
 		
-		bool Eliminar(referencia ref, iterador it) {
+		bool Eliminar(referencia ref, iterador it = sin_pos) {
 			if (Vacia()) {
 				return false;
 			}
