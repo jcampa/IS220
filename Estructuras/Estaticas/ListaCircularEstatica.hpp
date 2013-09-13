@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../../defs.h"
 #include "../Base/RegionEstatica.hpp"
 #include "../Interfaces/IListaCircular.hpp"
 
@@ -43,7 +44,7 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 			return m_it_libre == sin_pos;
 		}
 		
-		iterador Inicio() const {
+		inline iterador Inicio() const {
 			if (Vacia()) {
 				return sin_pos;
 			}
@@ -51,17 +52,17 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 			return AccederNodo(m_it_lista)->m_siguiente;
 		}
 		
-		iterador Fin() const {
+		inline iterador Fin() const {
 			return m_it_lista;
 		}
 		
 		// Comportamiento indefinido para it == sin_pos
-		referencia Acceder(iterador it) {
+		inline referencia Acceder(iterador it) {
 			return AccederNodo(it)->m_dato;
 		}
 		
 		// Comportamiento indefinido para it == sin_pos
-		iterador Siguiente(iterador it) {
+		inline iterador Siguiente(iterador it) {
 			return AccederNodo(it)->m_siguiente;
 		}
 		
