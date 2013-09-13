@@ -116,6 +116,10 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 			return &m_datos[it];
 		}
 		
+		inline const nodo* AccederNodo(iterador it) const {
+			return &m_datos[it];
+		}
+		
 		iterador ObtenerNodo() {
 			iterador it = m_it_libre;
 			
