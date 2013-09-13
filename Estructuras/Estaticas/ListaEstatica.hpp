@@ -73,7 +73,7 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 			if (it == sin_pos) {
 				AccederNodo(nuevo)->m_siguiente = m_it_lista;
 				
-				m_it_lista = nuevo;	
+				m_it_lista = nuevo;
 			} else {
 				AccederNodo(nuevo)->m_siguiente = Siguiente(it);
 				
