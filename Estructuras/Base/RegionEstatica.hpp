@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../defs.h"
+
 #include <cstddef>
 
 namespace IS220 { namespace Estructuras { namespace Base {
