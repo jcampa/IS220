@@ -147,3 +147,4 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 	};
 	
 }}}
+

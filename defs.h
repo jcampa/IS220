@@ -7,3 +7,4 @@
 	#define MOVE(a) (a)
 	#define CONSTEXPR
 #endif
+
