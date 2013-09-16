@@ -5,7 +5,7 @@
 #include "../Base/RegionEstatica.hpp"
 
 #include <cstddef>
-#include <algorithm>
+#include <utility>
 
 namespace IS220 { namespace Estructuras { namespace Estaticas {
 	
