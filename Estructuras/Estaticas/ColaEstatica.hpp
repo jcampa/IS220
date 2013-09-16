@@ -4,6 +4,7 @@
 #include "../Interfaces/ICola.hpp"
 #include "../Base/RegionEstatica.hpp"
 
+#include <cstddef>
 #include <algorithm>
 
 namespace IS220 { namespace Estructuras { namespace Estaticas {
@@ -71,7 +72,7 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 				return false;
 			}
 			
-			for (size_t i = 0; i < m_cantidad; ++i) {
+			for (std::size_t i = 0; i < m_cantidad; ++i) {
 				new(&m_datos[i]) tipo_valor(MOVE(m_datos[i + m_inicio]));
 				
 				m_datos[i + m_inicio].~tipo_valor();

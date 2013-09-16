@@ -33,7 +33,7 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 		ListaDobleEstaticaBase()
 			: m_it_lista(sin_pos), m_it_libre(0)
 		{
-			for (size_t i = 0; i < UCapacidad - 1; ++i) {
+			for (std::size_t i = 0; i < UCapacidad - 1; ++i) {
 				m_datos[i].m_siguiente = i + 1;
 			}
 			

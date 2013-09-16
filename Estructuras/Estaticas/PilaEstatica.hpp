@@ -4,6 +4,7 @@
 #include "../Interfaces/IPila.hpp"
 #include "../Base/RegionEstatica.hpp"
 
+#include <cstddef>
 #include <algorithm>
 
 namespace IS220 { namespace Estructuras { namespace Estaticas {

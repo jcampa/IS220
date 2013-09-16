@@ -4,18 +4,19 @@
 #include "../Base/RegionEstatica.hpp"
 #include "../Interfaces/IListaCircular.hpp"
 
+#include <cstddef>
 #include <algorithm>
 
 namespace IS220 { namespace Estructuras { namespace Estaticas {
 	
-	template <typename TDato, size_t UCapacidad>
+	template <typename TDato, std::size_t UCapacidad>
 	class ListaCircularEstaticaBase {
 	public:
 		typedef TDato tipo_valor;
 		typedef TDato& referencia;
 		typedef const TDato& const_referencia;
 		
-		typedef size_t iterador;
+		typedef std::size_t iterador;
 		
 	private:
 		struct nodo {
@@ -29,7 +30,7 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 		ListaCircularEstaticaBase()
 			: m_it_lista(sin_pos), m_it_libre(0)
 		{
-			for (size_t i = 0; i < UCapacidad - 1; ++i) {
+			for (std::size_t i = 0; i < UCapacidad - 1; ++i) {
 				m_datos[i].m_siguiente = i + 1;
 			}
 			
