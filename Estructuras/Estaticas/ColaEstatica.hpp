@@ -72,6 +72,10 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 				return false;
 			}
 			
+			// ** C++11 **
+			// (#include <algorithm>)
+			// std::move(&m_datos[m_inicio], &m_datos[m_inicio + m_cantidad],
+			//				&m_datos[0]);
 			for (std::size_t i = 0; i < m_cantidad; ++i) {
 				m_allocator.construct(&m_datos[i], MOVE(m_datos[i + m_inicio]));
 				
