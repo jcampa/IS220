@@ -6,6 +6,21 @@
 
 namespace IS220 { namespace Estructuras { namespace Base {
 	
+	/*
+	
+	Esta clase de ayuda emula (quizas no completamente) el comportamiento de:
+	
+		union {
+			TDato m_region[UCapacidad];
+		}
+	
+	que es solo disponible en C++11, gracias a "unrestricted unions."
+	
+	Se hace uso de esta facilidad en las estructuras de este proyecto para
+	evitar la inicializacion implicita de los N objetos dentro del array.
+	(Donde N = UCapacidad)
+	
+	*/
 	template <typename TDato, std::size_t UCapacidad>
 	class RegionEstatica {
 	public:
