@@ -38,7 +38,7 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 			
 			const std::size_t pos = m_inicio + m_cantidad;
 			
-			new(&m_datos[pos]) tipo_valor(obj);
+			m_allocator.construct(&m_datos[pos], obj);
 			
 			++m_cantidad;
 			
@@ -54,7 +54,7 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 			
 			obj = MOVE(m_datos[pos]);
 			
-			m_datos[pos].~tipo_valor();
+			m_allocator.destroy(&m_datos[pos]);
 			
 			++m_inicio;
 			--m_cantidad;
@@ -73,9 +73,9 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 			}
 			
 			for (std::size_t i = 0; i < m_cantidad; ++i) {
-				new(&m_datos[i]) tipo_valor(MOVE(m_datos[i + m_inicio]));
+				m_allocator.construct(&m_datos[i], MOVE(m_datos[i + m_inicio]));
 				
-				m_datos[i + m_inicio].~tipo_valor();
+				m_allocator.destroy(&m_datos[i + m_inicio]);
 			}
 			
 			m_inicio = 0;
@@ -88,6 +88,8 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 		
 		std::size_t m_inicio;
 		std::size_t m_cantidad;
+		
+		std::allocator<TDato> m_allocator;
 	};
 	
 	template <typename TDato>
