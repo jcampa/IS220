@@ -71,17 +71,18 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 				return false;
 			}
 			
-			if (it == sin_pos) {
-				it = m_it_lista;
-			}
-			
 			iterador nuevo = ObtenerNodo();
 			
 			new(&AccederNodo(nuevo)->m_dato) tipo_valor(obj);
 			
+			if (it == sin_pos) {
+				it = m_it_lista;
+			}
+			
 			AccederNodo(nuevo)->m_siguiente = it;
 			AccederNodo(nuevo)->m_anterior = AccederNodo(it)->m_anterior;
 			AccederNodo(it)->m_anterior = nuevo;
+			AccederNodo(AccederNodo(nuevo)->m_anterior)->m_siguiente = nuevo;
 			
 			if (it == m_it_lista) {
 				m_it_lista = nuevo;
@@ -103,9 +104,10 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 			
 			new(&AccederNodo(nuevo)->m_dato) tipo_valor(obj);
 			
-			AccederNodo(nuevo)->m_siguiente = AccederNodo(it)->m_siguiente;
 			AccederNodo(nuevo)->m_anterior = it;
+			AccederNodo(nuevo)->m_siguiente = AccederNodo(it)->m_siguiente;
 			AccederNodo(it)->m_siguiente = nuevo;
+			AccederNodo(AccederNodo(nuevo)->m_siguiente)->m_anterior = nuevo;
 			
 			return true;
 		}
@@ -136,7 +138,7 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 				AccederNodo(siguiente)->m_anterior = anterior;
 			}
 			
-			if (it == sin_pos) {
+			if (it == m_it_lista) {
 				m_it_lista = siguiente;
 			}
 			
