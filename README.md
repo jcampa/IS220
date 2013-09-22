@@ -25,3 +25,14 @@ Resumen
 	mkdir build
 	cd build
 	cmake ..
+
+Instrucciones (Linux)
+--
+
+	git clone https://github.com/Garciat/IS220.git
+	cd IS220
+	mkdir build
+	cd build
+	cmake ..
+	make
+	tests/IS220-tests
