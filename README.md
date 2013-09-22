@@ -20,8 +20,8 @@ Instrucciones (Windows + Visual Studio)
 
 Resumen
 
-    git clone https://github.com/Garciat/IS220.git
-    cd IS220
-    mkdir build
-    cd build
-    cmake ..
+	git clone https://github.com/Garciat/IS220.git
+	cd IS220
+	mkdir build
+	cd build
+	cmake ..
