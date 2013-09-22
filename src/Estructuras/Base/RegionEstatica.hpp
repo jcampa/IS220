@@ -30,19 +30,19 @@ namespace IS220 { namespace Estructuras { namespace Base {
 		typedef TDato* puntero;
 		typedef TDato* const_puntero;
 		
-		inline referencia operator[] (std::size_t pos) {
+		inline referencia operator[] (std::size_t pos) NOEXCEPT {
 			return * reinterpret_cast<puntero>(&m_region[pos * sizeof(tipo_valor)]);
 		}
 		
-		inline CONSTEXPR const_referencia operator[] (std::size_t pos) const {
+		inline CONSTEXPR const_referencia operator[] (std::size_t pos) const NOEXCEPT {
 			return * reinterpret_cast<const_puntero>(&m_region[pos * sizeof(tipo_valor)]);
 		}
 		
-		inline operator puntero() {
+		inline puntero data() NOEXCEPT {
 			return & operator[](0);
 		}
 		
-		inline CONSTEXPR operator const_puntero() const {
+		inline CONSTEXPR const_puntero data() const NOEXCEPT {
 			return & operator[](0);
 		}
 		
