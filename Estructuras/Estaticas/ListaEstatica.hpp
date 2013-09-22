@@ -4,6 +4,7 @@
 #include "../Base/RegionEstatica.hpp"
 
 #include <cstddef>
+#include <memory>
 #include <utility>
 
 namespace IS220 { namespace Estructuras { namespace Estaticas {
@@ -69,7 +70,7 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 			
 			iterador nuevo = ObtenerNodo();
 			
-			new(&AccederNodo(nuevo)->m_dato) tipo_valor(obj);
+			m_allocator.construct(&AccederNodo(nuevo)->m_dato, obj);
 			
 			if (it == sin_pos) {
 				AccederNodo(nuevo)->m_siguiente = m_it_lista;
@@ -104,7 +105,7 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 			if (elim != sin_pos) {
 				ref = MOVE(AccederNodo(elim)->m_dato);
 				
-				AccederNodo(elim)->m_dato.~tipo_valor();
+				m_allocator.destroy(&AccederNodo(it)->m_dato);
 				
 				DevolverNodo(elim);
 			}
@@ -140,6 +141,8 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 		
 		iterador m_it_lista;
 		iterador m_it_libre;
+
+		std::allocator<tipo_valor> m_allocator;
 	};
 	
 	template <typename TDato>

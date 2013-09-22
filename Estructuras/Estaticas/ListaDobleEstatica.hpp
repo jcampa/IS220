@@ -4,6 +4,7 @@
 #include "../Base/RegionEstatica.hpp"
 
 #include <cstddef>
+#include <memory>
 #include <utility>
 
 namespace IS220 { namespace Estructuras { namespace Estaticas {
@@ -73,16 +74,16 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 			
 			iterador nuevo = ObtenerNodo();
 			
-			new(&AccederNodo(nuevo)->m_dato) tipo_valor(obj);
-			
+			m_allocator.construct(&AccederNodo(nuevo)->m_dato, obj);
+
 			if (it == sin_pos) {
 				it = m_it_lista;
 			}
-			
+
 			if (it == m_it_lista) {
 				m_it_lista = nuevo;
 			}
-			
+
 			if (it != sin_pos) {
 				AccederNodo(nuevo)->m_siguiente = it;
 				AccederNodo(nuevo)->m_anterior = AccederNodo(it)->m_anterior;
@@ -104,8 +105,8 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 			
 			iterador nuevo = ObtenerNodo();
 			
-			new(&AccederNodo(nuevo)->m_dato) tipo_valor(obj);
-			
+			m_allocator.construct(&AccederNodo(nuevo)->m_dato, obj);
+
 			AccederNodo(nuevo)->m_anterior = it;
 			AccederNodo(nuevo)->m_siguiente = AccederNodo(it)->m_siguiente;
 			AccederNodo(it)->m_siguiente = nuevo;
@@ -125,7 +126,7 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 			
 			ref = MOVE(AccederNodo(it)->m_dato);
 			
-			AccederNodo(it)->m_dato.~tipo_valor();
+			m_allocator.destroy(&AccederNodo(it)->m_dato);
 			
 			iterador anterior, siguiente;
 			
@@ -181,6 +182,8 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 		
 		iterador m_it_lista;
 		iterador m_it_libre;
+
+		std::allocator<tipo_valor> m_allocator;
 	};
 	
 	template <typename TDato>
