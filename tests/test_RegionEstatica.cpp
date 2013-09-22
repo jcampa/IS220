@@ -6,12 +6,18 @@ using namespace IS220::Estructuras::Base;
 
 static int contador = 0;
 
+struct SizeofCoherente_t {
+	int a, b;
+	char c[14];
+};
+
+struct NoInicializaDatos_t {
+	NoInicializaDatos_t() {
+		++contador;
+	}
+};
+
 TEST(RegionEstaticaTest, SizeofCoherente) {
-	struct SizeofCoherente_t {
-		int a, b;
-		char c[14];
-	};
-	
 	typedef RegionEstatica<SizeofCoherente_t, 10> region_t;
 	
 	const size_t sz_region = sizeof(region_t);
@@ -22,12 +28,6 @@ TEST(RegionEstaticaTest, SizeofCoherente) {
 
 TEST(RegionEstaticaTest, NoInicializaDatos) {
 	contador = 0;
-	
-	struct NoInicializaDatos_t {
-		NoInicializaDatos_t() {
-			++contador;
-		}
-	};
 	
 	RegionEstatica<NoInicializaDatos_t, 10> region;
 	
