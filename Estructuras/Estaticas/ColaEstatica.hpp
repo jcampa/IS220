@@ -90,7 +90,7 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 		std::size_t m_inicio;
 		std::size_t m_cantidad;
 		
-		std::allocator<TDato> m_allocator;
+		std::allocator<tipo_valor> m_allocator;
 	};
 	
 	template <typename TDato>
