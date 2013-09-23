@@ -35,4 +35,4 @@ Instrucciones (Linux)
 	cd build
 	cmake ..
 	make
-	tests/IS220-test
+	make test
