@@ -11,6 +11,10 @@ include_directories(
 
 if(MSVC)
 	set(CMAKE_CXX_FLAGS_DEBUG "/MTd")
+	
+	if(MSVC_VERSION EQUAL 1700)
+		add_definitions(-D_VARIADIC_MAX=10)
+	endif()
 endif()
 
 add_executable(IS220-test
