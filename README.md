@@ -16,7 +16,7 @@ Instrucciones (Windows + Visual Studio)
   * Navegar al directorio creado: `cd build`
   * Correr CMake: `cmake ..`
   * Abrir "IS220.sln"
-  * Compilar y correr el proyecto "IS220-tests"
+  * Compilar y correr el proyecto "IS220-test"
 
 Resumen
 
@@ -35,4 +35,4 @@ Instrucciones (Linux)
 	cd build
 	cmake ..
 	make
-	tests/IS220-tests
+	tests/IS220-test

@@ -13,11 +13,11 @@ if(MSVC)
 	set(CMAKE_CXX_FLAGS_DEBUG "/MTd")
 endif()
 
-add_executable(IS220-tests
+add_executable(IS220-test
 	${test_srcs}
 )
 
-target_link_libraries(IS220-tests
+target_link_libraries(IS220-test
 	gtest
 	gtest_main
 )
