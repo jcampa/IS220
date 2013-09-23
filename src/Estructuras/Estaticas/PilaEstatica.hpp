@@ -11,7 +11,7 @@
 namespace IS220 { namespace Estructuras { namespace Estaticas {
 	
 	template <typename TDato, std::size_t UCapacidad>
-	class PilaEstaticaBase : public Interfaces::IPila<TDato> {
+	class PilaEstaticaBase {
 	public:
 		typedef TDato tipo_valor;
 		typedef TDato& referencia;
