@@ -29,14 +29,14 @@ namespace IS220 { namespace Estructuras { namespace Estaticas {
 			return m_cantidad == UCapacidad;
 		}
 		
-		bool Poner(const_referencia obj) {
+		bool Poner(tipo_valor obj) {
 			if (Llena()) {
 				return false;
 			}
 			
 			const std::size_t pos = m_cantidad;
 			
-			m_allocator.construct(&m_datos[pos], obj);
+			m_allocator.construct(&m_datos[pos], MOVE(obj));
 			
 			++m_cantidad;
 			
