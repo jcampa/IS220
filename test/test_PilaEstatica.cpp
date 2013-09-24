@@ -6,15 +6,16 @@ using namespace IS220::Estructuras::Estaticas;
 
 TEST(PilaEstaticaTest, Basico) {
 	PilaEstaticaBase<int, 5> pila;
-	int val1 = 0xDEADBEEF;
+	const int val_expected = 1992;
+	int val_read = val_expected;
 	
 	ASSERT_TRUE(pila.Vacia());
 	
 	ASSERT_FALSE(pila.Llena());
 	
-	ASSERT_FALSE(pila.Sacar(val1));
+	ASSERT_FALSE(pila.Sacar(val_read));
 	
-	ASSERT_EQ(val1, 0xDEADBEEF);
+	ASSERT_EQ(val_read, val_expected);
 	
 	for (int i = 1; i <= 5; ++i) {
 		ASSERT_TRUE(pila.Poner(i));

@@ -6,15 +6,16 @@ using namespace IS220::Estructuras::Estaticas;
 
 TEST(ColaEstaticaTest, Basico) {
 	ColaEstaticaBase<int, 5> cola;
-	int val1 = 0xDEADBEEF;
+	const int val_expected = 1992;
+	int val_read = val_expected;
 	
 	ASSERT_TRUE(cola.Vacia());
 	
 	ASSERT_FALSE(cola.Llena());
 	
-	ASSERT_FALSE(cola.Sacar(val1));
+	ASSERT_FALSE(cola.Sacar(val_read));
 	
-	ASSERT_EQ(val1, 0xDEADBEEF);
+	ASSERT_EQ(val_read, val_expected);
 	
 	for (int i = 1; i <= 5; ++i) {
 		ASSERT_TRUE(cola.Poner(i));
