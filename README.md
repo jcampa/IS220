@@ -36,3 +36,11 @@ Instrucciones (Linux)
 	cmake ..
 	make
 	make test
+
+Notas
+--
+
+Testeado en:
+
+  * Visual Studio 2012 Update 3
+  * GCC 4.7.2
