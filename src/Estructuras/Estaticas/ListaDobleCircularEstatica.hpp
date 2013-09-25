@@ -199,7 +199,8 @@ private:
 };
 
 template <typename TDato>
-class ListaDobleCircularEstatica : public ListaDobeEstaticaBase<TDato, 20> {
+class ListaDobleCircularEstatica
+	: public ListaDobleCircularEstaticaBase<TDato, 20> {
 	//using ListaDobleCircularEstaticaBase::ListaDobleCircularEstaticaBase;
 };
 

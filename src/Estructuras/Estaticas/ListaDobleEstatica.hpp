@@ -189,7 +189,7 @@ private:
 };
 
 template <typename TDato>
-class ListaDobleEstatica : public ListaDobeEstaticaBase<TDato, 20> {
+class ListaDobleEstatica : public ListaDobleEstaticaBase<TDato, 20> {
 	//using ListaDobleEstaticaBase::ListaDobleEstaticaBase;
 };
 
