@@ -1,8 +1,13 @@
 set(test_srcs
 	test_RegionEstatica.cpp
+	
 	test_PilaEstatica.cpp
 	test_ColaEstatica.cpp
+	test_ColaCircularEstatica.cpp
 	test_ListaEstatica.cpp
+	test_ListaCircularEstatica.cpp
+	test_ListaDobleEstatica.cpp
+	test_ListaDobleCircularEstatica.cpp
 	
 	test_AlgoritmosCola.cpp
 )
