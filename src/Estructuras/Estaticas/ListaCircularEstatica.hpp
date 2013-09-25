@@ -2,7 +2,6 @@
 
 #include "../../defs.h"
 #include "../Base/RegionEstatica.hpp"
-#include "../Interfaces/IListaCircular.hpp"
 
 #include <cstddef>
 #include <memory>
