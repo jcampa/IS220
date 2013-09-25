@@ -1,6 +1,6 @@
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 
-#include "Estructuras/Estaticas/ColaEstatica.hpp"
+#include "../src/Estructuras/Estaticas/ColaEstatica.hpp"
 
 using namespace IS220::Estructuras::Estaticas;
 

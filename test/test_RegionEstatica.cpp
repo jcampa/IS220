@@ -1,6 +1,6 @@
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 
-#include "Estructuras/Base/RegionEstatica.hpp"
+#include "../src/Estructuras/Base/RegionEstatica.hpp"
 
 using namespace IS220::Estructuras::Base;
 

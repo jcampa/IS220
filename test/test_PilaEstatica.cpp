@@ -1,6 +1,6 @@
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 
-#include "Estructuras/Estaticas/PilaEstatica.hpp"
+#include "../src/Estructuras/Estaticas/PilaEstatica.hpp"
 
 using namespace IS220::Estructuras::Estaticas;
 
