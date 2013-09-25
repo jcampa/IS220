@@ -18,13 +18,15 @@ Instrucciones (Windows + Visual Studio)
   * Abrir "IS220.sln"
   * Compilar y correr el proyecto "IS220-test"
 
-Resumen
+Si tiene git, cmake, devenv.exe en su PATH (recomendado):
 
 	git clone https://github.com/Garciat/IS220.git
 	cd IS220
 	mkdir build
 	cd build
 	cmake ..
+	devenv IS220.sln /Build
+	.\test\Debug\IS220-test.exe
 
 Instrucciones (Linux)
 --
