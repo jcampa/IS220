@@ -3,6 +3,8 @@ set(test_srcs
 	test_PilaEstatica.cpp
 	test_ColaEstatica.cpp
 	test_ListaEstatica.cpp
+	
+	test_AlgoritmosCola.cpp
 )
 
 include_directories(
