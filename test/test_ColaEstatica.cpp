@@ -29,6 +29,8 @@ TEST(ColaEstaticaTest, Basico) {
 		}
 	}
 	
+	ASSERT_FALSE(cola.Poner(6));
+	
 	for (int i = 1; i <= 5; ++i) {
 		int val = 0;
 		

@@ -29,6 +29,8 @@ TEST(PilaEstaticaTest, Basico) {
 		}
 	}
 	
+	ASSERT_FALSE(pila.Poner(6));
+	
 	for (int i = 5; i >= 1; --i) {
 		int val = 0;
 		
