@@ -1,7 +1,6 @@
 #pragma once
 
 #include "../../defs.h"
-#include "../Interfaces/ICola.hpp"
 #include "../Base/RegionEstatica.hpp"
 
 #include <cstddef>
