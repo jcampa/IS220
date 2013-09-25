@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../Estructuras/Interfaces/ICola.hpp"
-#include "../Estructuras/Estaticas/ColaEstatica.hpp"
-
 namespace IS220 { namespace Algoritmos {
 
 /*
@@ -16,11 +13,12 @@ void OrdenarCola(TCola& cola) {
 		return;
 	}
 	
+	typedef typename TCola::tipo_valor TDato;
+	
 	TDato pivote;
 	cola.Sacar(pivote);
 	
-	// TODO: utilizar colas dinamicas
-	ColaEstatica<TDato> menores, mayores;
+	TCola menores, mayores;
 	
 	TDato elem;
 	
