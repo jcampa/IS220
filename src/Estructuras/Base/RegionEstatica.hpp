@@ -28,7 +28,7 @@ public:
 	typedef TDato& referencia;
 	typedef const TDato& const_referencia;
 	typedef TDato* puntero;
-	typedef TDato* const_puntero;
+	typedef const TDato* const_puntero;
 	
 	inline referencia operator[] (std::size_t pos) NOEXCEPT {
 		return * reinterpret_cast<puntero>(&m_region[pos * sizeof(tipo_valor)]);
