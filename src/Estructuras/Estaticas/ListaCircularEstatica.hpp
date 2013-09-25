@@ -16,6 +16,8 @@ public:
 	typedef TDato tipo_valor;
 	typedef TDato& referencia;
 	typedef const TDato& const_referencia;
+	typedef TDato* puntero;
+	typedef const TDato* const_puntero;
 	
 	typedef std::size_t iterador;
 	
