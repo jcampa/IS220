@@ -10,7 +10,7 @@
 namespace IS220 { namespace Estructuras { namespace Estaticas {
 
 template <typename TDato, std::size_t UCapacidad>
-class ColaCircularEstaticaBase : public Interfaces::ICola<TDato> {
+class ColaCircularEstaticaBase {
 public:
 	typedef TDato tipo_valor;
 	typedef TDato& referencia;
