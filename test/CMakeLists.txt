@@ -2,6 +2,7 @@ set(test_srcs
 	test_RegionEstatica.cpp
 	test_PilaEstatica.cpp
 	test_ColaEstatica.cpp
+	test_ListaEstatica.cpp
 )
 
 include_directories(
