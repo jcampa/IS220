@@ -7,7 +7,7 @@ namespace IS220 { namespace Algoritmos {
 Se implementa un algoritmo divide-and-conquer estilo quicksort.
 
 */
-template <class TCola>
+template <typename TCola>
 void OrdenarCola(TCola& cola) {
 	if (cola.Vacia()) {
 		return;
